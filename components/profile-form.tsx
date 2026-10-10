@@ -1,5 +1,9 @@
 'use client'
 
+import { useActionState, useEffect } from 'react'
+import { useFormStatus } from 'react-dom'
+import { toast } from 'sonner'
+
 import { UpdateDisplayNameState } from '@/actions/user'
 import { Button } from '@/components/ui/button'
 import {
@@ -11,9 +15,6 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { useActionState, useEffect } from 'react'
-import { useFormStatus } from 'react-dom'
-import { toast } from 'sonner'
 
 function SubmitButton() {
   const { pending } = useFormStatus()

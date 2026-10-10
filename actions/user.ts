@@ -1,8 +1,9 @@
 'use server'
 
+import { revalidatePath } from 'next/cache'
+
 import { getCurrentUser } from '@/lib/supabase/get-current-user'
 import { createAdminClient } from '@/lib/supabase/server'
-import { revalidatePath } from 'next/cache'
 
 export type UpdateDisplayNameState = {
   error: boolean

@@ -1,9 +1,11 @@
 'use client'
 
-import { useCurrentUser } from '@/hooks/use-current-user'
-import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import { ComponentProps } from 'react'
+
+import { useCurrentUser } from '@/hooks/use-current-user'
+import { createClient } from '@/lib/supabase/client'
+
 import { ActionButton } from './ui/action-button'
 
 export function LeaveRoomButton({

@@ -1,8 +1,9 @@
 'use client'
 
-import { buttonPressVariants } from '@/lib/animations'
 import { motion } from 'framer-motion'
 import { ComponentPropsWithoutRef, forwardRef } from 'react'
+
+import { buttonPressVariants } from '@/lib/animations'
 
 /**
  * Animated button wrapper that adds subtle press and hover effects

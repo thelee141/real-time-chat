@@ -1,7 +1,8 @@
+import { notFound } from 'next/navigation'
+
 import { RoomClient } from '@/app/rooms/[id]/_client'
 import { getCurrentUser } from '@/lib/supabase/get-current-user'
 import { createAdminClient } from '@/lib/supabase/server'
-import { notFound } from 'next/navigation'
 
 export default async function RoomPage({
   params,

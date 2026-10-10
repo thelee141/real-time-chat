@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+
 import { AnimatedRoomCard } from "@/components/animated-room-card";
 import { CreateRoomDialog } from "@/components/create-room-dialog";
 import { JoinRoomByCodeDialog } from "@/components/join-room-by-code-dialog";

@@ -1,19 +1,12 @@
 'use client'
 
-import { Message } from '@/app/rooms/[id]/_client'
-import { cn } from '@/lib/utils'
-import { MoreVertical, Trash2, User2Icon } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { MoreVertical, Pencil, Trash2, User2Icon } from 'lucide-react'
 import Image from 'next/image'
 import { Ref, useState } from 'react'
-import { motion } from 'framer-motion'
-import { slideUpVariants, fastStaggerContainerVariants, staggerItemVariants } from '@/lib/animations'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { Button } from '@/components/ui/button'
+import { toast } from 'sonner'
+
+import { Message } from '@/app/rooms/[id]/_client'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -24,12 +17,19 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog'
+import { Button } from '@/components/ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { LoadingSwap } from '@/components/ui/loading-swap'
+import { Textarea } from '@/components/ui/textarea'
+import { fastStaggerContainerVariants, slideUpVariants, staggerItemVariants } from '@/lib/animations'
 import { deleteMessage } from '@/lib/supabase/delete-message'
 import { editMessage } from '@/lib/supabase/edit-message'
-import { toast } from 'sonner'
-import { LoadingSwap } from '@/components/ui/loading-swap'
-import { Pencil } from 'lucide-react'
-import { Textarea } from '@/components/ui/textarea'
+import { cn } from '@/lib/utils'
 
 const DATE_FORMATTER = new Intl.DateTimeFormat(undefined, {
   dateStyle: 'medium',

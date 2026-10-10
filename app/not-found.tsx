@@ -1,7 +1,8 @@
-import { AnimatedPage } from '@/components/animated-page'
-import { Button } from '@/components/ui/button'
 import { ArrowLeftIcon, GhostIcon } from 'lucide-react'
 import Link from 'next/link'
+
+import { AnimatedPage } from '@/components/animated-page'
+import { Button } from '@/components/ui/button'
 
 export default function NotFound() {
   return (

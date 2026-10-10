@@ -1,13 +1,14 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
-import { LoginModal } from '@/components/login-modal'
-import { pageVariants } from '@/lib/animations'
 import { User } from '@supabase/supabase-js'
 import { motion } from 'framer-motion'
 import { ArrowRight, MessageSquare } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
+
+import { LoginModal } from '@/components/login-modal'
+import { Button } from '@/components/ui/button'
+import { pageVariants } from '@/lib/animations'
 
 interface HomeHeroProps {
   user?: User | null

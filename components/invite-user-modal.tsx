@@ -1,5 +1,14 @@
 'use client'
 
+import { zodResolver } from '@hookform/resolvers/zod'
+import { UserPlusIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { SetStateAction, useState } from 'react'
+import { Controller, useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+import z from 'zod'
+
+import { addUserToRoom } from '@/actions/rooms'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -11,14 +20,6 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 
-import { addUserToRoom } from '@/actions/rooms'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { UserPlusIcon } from 'lucide-react'
-import { useRouter } from 'next/navigation'
-import { SetStateAction, useState } from 'react'
-import { Controller, useForm } from 'react-hook-form'
-import { toast } from 'sonner'
-import z from 'zod'
 import { Field, FieldError, FieldGroup, FieldLabel } from './ui/field'
 import { LoadingSwap } from './ui/loading-swap'
 

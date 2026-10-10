@@ -1,9 +1,10 @@
 'use client'
 
-import { staggerContainerVariants, staggerItemVariants } from '@/lib/animations'
 import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
 import Image from 'next/image'
+
+import { staggerContainerVariants, staggerItemVariants } from '@/lib/animations'
 
 const testimonials = [
   {

@@ -1,10 +1,11 @@
 'use client'
 
-import { cn } from '@/lib/utils'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Loader2Icon } from 'lucide-react'
 import type { ReactNode } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+
 import { crossfadeVariants } from '@/lib/animations'
+import { cn } from '@/lib/utils'
 
 export function LoadingSwap({
   isLoading,

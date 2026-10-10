@@ -1,12 +1,14 @@
+import './globals.css'
+
+import type { Metadata } from 'next'
+import { Geist, Poppins } from 'next/font/google'
+import NextTopLoader from 'nextjs-toploader'
+
 import { Navbar } from '@/components/navbar'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
 import { UserProvider } from '@/contexts/user-context'
 import { getCurrentUser } from '@/lib/supabase/get-current-user'
-import type { Metadata } from 'next'
-import { Geist, Poppins } from 'next/font/google'
-import NextTopLoader from 'nextjs-toploader'
-import './globals.css'
 
 const poppins = Poppins({
   variable: '--font-poppins',

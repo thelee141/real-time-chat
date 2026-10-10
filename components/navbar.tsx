@@ -1,14 +1,15 @@
 'use client'
 
+import { Cat, User2Icon } from 'lucide-react'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
 import { LogoutButton } from '@/components/logout-button'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { Spinner } from '@/components/ui/spinner'
 import { useUser } from '@/contexts/user-context'
 import { createClient } from '@/lib/supabase/client'
-import { Cat, User2Icon } from 'lucide-react'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
 export function Navbar() {
   const { isLoading, user } = useUser()

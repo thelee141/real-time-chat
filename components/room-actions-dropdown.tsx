@@ -1,5 +1,13 @@
 'use client'
 
+import {
+  GlobeIcon,
+  LockIcon,
+  MoreHorizontalIcon,
+  ShareIcon,
+} from 'lucide-react'
+import { useState } from 'react'
+
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -8,13 +16,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import {
-  GlobeIcon,
-  LockIcon,
-  MoreHorizontalIcon,
-  ShareIcon,
-} from 'lucide-react'
-import { useState } from 'react'
+
 import { SetRoomPasswordDialog } from './set-room-password-dialog'
 import { ShareRoomCodeDialog } from './share-room-code-dialog'
 

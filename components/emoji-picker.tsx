@@ -1,11 +1,12 @@
 'use client'
 
-import { InputGroupButton } from '@/components/ui/input-group'
 import type { EmojiClickData, Theme } from 'emoji-picker-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Smile } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
+
+import { InputGroupButton } from '@/components/ui/input-group'
 
 const Picker = dynamic(() => import('emoji-picker-react'), { ssr: false })
 

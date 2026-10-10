@@ -1,5 +1,9 @@
 'use client'
 
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import { FaGithub, FaGoogle } from 'react-icons/fa'
+
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -10,9 +14,6 @@ import {
 } from '@/components/ui/dialog'
 import { buttonPressVariants, slideUpVariants } from '@/lib/animations'
 import { createClient } from '@/lib/supabase/client'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
-import { FaGithub, FaGoogle } from 'react-icons/fa'
 
 interface LoginModalProps {
   open: boolean

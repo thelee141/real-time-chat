@@ -1,5 +1,9 @@
 'use client'
 
+import { motion } from 'framer-motion'
+import { Lock } from 'lucide-react'
+import Link from 'next/link'
+
 import { JoinRoomButton } from '@/components/join-room-button'
 import { LeaveRoomButton } from '@/components/leave-room-button'
 import { Button } from '@/components/ui/button'
@@ -11,9 +15,6 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { cardHoverVariants } from '@/lib/animations'
-import { motion } from 'framer-motion'
-import { Lock } from 'lucide-react'
-import Link from 'next/link'
 
 /**
  * Animated room card with hover effects

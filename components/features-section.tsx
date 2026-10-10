@@ -1,9 +1,10 @@
 'use client'
 
-import { FeatureHighlight } from '@/components/feature-highlight'
-import { staggerContainerVariants } from '@/lib/animations'
 import { motion } from 'framer-motion'
 import { Globe, Lock, MessageSquare, Zap } from 'lucide-react'
+
+import { FeatureHighlight } from '@/components/feature-highlight'
+import { staggerContainerVariants } from '@/lib/animations'
 
 export function FeaturesSection() {
   return (

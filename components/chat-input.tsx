@@ -1,12 +1,14 @@
 'use client'
 
-import { Message } from '@/app/rooms/[id]/_client'
-import { buttonPressVariants } from '@/lib/animations'
-import { sendMessage } from '@/lib/supabase/send-message'
 import { motion } from 'framer-motion'
 import { SendIcon } from 'lucide-react'
 import { FormEvent, useRef, useState } from 'react'
 import { toast } from 'sonner'
+
+import { Message } from '@/app/rooms/[id]/_client'
+import { buttonPressVariants } from '@/lib/animations'
+import { sendMessage } from '@/lib/supabase/send-message'
+
 import { EmojiPicker } from './emoji-picker'
 import {
   InputGroup,

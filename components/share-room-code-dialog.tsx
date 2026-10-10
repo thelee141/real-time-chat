@@ -1,5 +1,10 @@
 'use client'
 
+import { CheckIcon, CopyIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { toast } from 'sonner'
+
 import { regenerateRoomCode } from '@/actions/rooms'
 import { Button } from '@/components/ui/button'
 import {
@@ -9,10 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import { CheckIcon, CopyIcon } from 'lucide-react'
-import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
-import { toast } from 'sonner'
+
 import { LoadingSwap } from './ui/loading-swap'
 
 export function ShareRoomCodeDialog({

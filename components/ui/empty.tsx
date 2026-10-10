@@ -2,9 +2,10 @@
 
 import { cva, type VariantProps } from "class-variance-authority"
 import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
-import { fadeInVariants, staggerContainerVariants, staggerItemVariants } from "@/lib/animations"
 import { ComponentPropsWithoutRef } from "react"
+
+import { fadeInVariants, staggerContainerVariants, staggerItemVariants } from "@/lib/animations"
+import { cn } from "@/lib/utils"
 
 function Empty({ className, ...props }: ComponentPropsWithoutRef<typeof motion.div>) {
   return (
@@ -110,9 +111,9 @@ function EmptyContent({ className, ...props }: ComponentPropsWithoutRef<typeof m
 
 export {
   Empty,
-  EmptyHeader,
-  EmptyTitle,
-  EmptyDescription,
   EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
   EmptyMedia,
+  EmptyTitle,
 }

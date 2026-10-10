@@ -1,5 +1,10 @@
 'use client'
 
+import { AnimatePresence, motion } from 'framer-motion'
+import { Cat, Lock, MessagesSquare, Moon, Zap } from 'lucide-react'
+import { useState } from 'react'
+import { FaGithub, FaGoogle } from 'react-icons/fa'
+
 import { Button } from '@/components/ui/button'
 import {
   buttonPressVariants,
@@ -8,10 +13,7 @@ import {
   staggerContainerVariants,
 } from '@/lib/animations'
 import { createClient } from '@/lib/supabase/client'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Cat, Lock, MessagesSquare, Moon, Zap } from 'lucide-react'
-import { useState } from 'react'
-import { FaGithub, FaGoogle } from 'react-icons/fa'
+
 import { FeatureHighlight } from './feature-highlight'
 
 export function LoginHero() {

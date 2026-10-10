@@ -1,5 +1,10 @@
 'use client'
 
+import { RealtimeChannel } from '@supabase/supabase-js'
+import { AnimatePresence } from 'framer-motion'
+import { Lock } from 'lucide-react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+
 import { ChatInput } from '@/components/chat-input'
 import { ChatMessage } from '@/components/chat-message'
 import { NewMessagesIndicator } from '@/components/new-messages-indicator'
@@ -7,10 +12,6 @@ import { RoomActionsDropdown } from '@/components/room-actions-dropdown'
 import { Button } from '@/components/ui/button'
 import { Empty, EmptyHeader, EmptyTitle } from '@/components/ui/empty'
 import { createClient } from '@/lib/supabase/client'
-import { RealtimeChannel } from '@supabase/supabase-js'
-import { AnimatePresence } from 'framer-motion'
-import { Lock } from 'lucide-react'
-import { useCallback, useEffect, useRef, useState } from 'react'
 
 export type Message = {
   id: string

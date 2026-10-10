@@ -1,5 +1,12 @@
 'use client'
 
+import { zodResolver } from '@hookform/resolvers/zod'
+import { CheckIcon, CopyIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { Controller, useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+
 import { createRoom } from '@/actions/rooms'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -21,12 +28,6 @@ import {
 import { Input } from '@/components/ui/input'
 import { LoadingSwap } from '@/components/ui/loading-swap'
 import { CreateRoomData, createRoomSchema } from '@/lib/schemas/room'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { CheckIcon, CopyIcon } from 'lucide-react'
-import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
-import { Controller, useForm } from 'react-hook-form'
-import { toast } from 'sonner'
 
 export function CreateRoomDialog() {
   const [open, setOpen] = useState(false)

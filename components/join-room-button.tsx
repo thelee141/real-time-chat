@@ -1,11 +1,12 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+import { ComponentProps, useState } from 'react'
+
 import { JoinPasswordDialog } from '@/components/join-password-dialog'
 import { ActionButton } from '@/components/ui/action-button'
 import { useUser } from '@/contexts/user-context'
 import { createClient } from '@/lib/supabase/client'
-import { useRouter } from 'next/navigation'
-import { ComponentProps, useState } from 'react'
 
 export function JoinRoomButton({
   children,

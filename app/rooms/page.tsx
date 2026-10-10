@@ -1,3 +1,7 @@
+import { MessagesSquareIcon } from 'lucide-react'
+import { Metadata } from 'next'
+import { redirect } from 'next/navigation'
+
 import { AnimatedPage } from '@/components/animated-page'
 import { AnimatedRoomList } from '@/components/animated-room-list'
 import { CreateRoomDialog } from '@/components/create-room-dialog'
@@ -12,9 +16,6 @@ import {
 } from '@/components/ui/empty'
 import { getCurrentUser } from '@/lib/supabase/get-current-user'
 import { createAdminClient } from '@/lib/supabase/server'
-import { MessagesSquareIcon } from 'lucide-react'
-import { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 
 // generate metadata
 export const metadata: Metadata = {

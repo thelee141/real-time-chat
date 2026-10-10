@@ -1,5 +1,6 @@
-import { createClient } from '@/lib/supabase/server'
 import { cache } from 'react'
+
+import { createClient } from '@/lib/supabase/server'
 
 async function currentUser() {
   const supabase = await createClient()

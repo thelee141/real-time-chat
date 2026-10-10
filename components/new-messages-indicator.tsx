@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
+
 import { Button } from './ui/button'
 
 interface NewMessagesIndicatorProps {

@@ -1,5 +1,9 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import { toast } from 'sonner'
+
 import { verifyPasswordAndJoinRoom } from '@/actions/rooms'
 import { Button } from '@/components/ui/button'
 import {
@@ -12,9 +16,6 @@ import {
 import { Field, FieldError, FieldLabel } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
 import { LoadingSwap } from '@/components/ui/loading-swap'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
-import { toast } from 'sonner'
 
 export function JoinPasswordDialog({
   open,

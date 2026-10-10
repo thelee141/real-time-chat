@@ -1,8 +1,9 @@
 'use client'
 
-import { staggerItemVariants } from '@/lib/animations'
 import { motion } from 'framer-motion'
 import { LucideIcon } from 'lucide-react'
+
+import { staggerItemVariants } from '@/lib/animations'
 
 interface FeatureHighlightProps {
   icon: LucideIcon
