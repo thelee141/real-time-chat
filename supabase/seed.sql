@@ -3,6 +3,9 @@
 --
 -- Demo accounts (email login is dev-only UI; password for both: password123):
 --   alice@example.com / bob@example.com
+--
+-- The *token columns must be non-null empty strings: gotrue fails to scan
+-- NULL confirmation/recovery/email-change tokens on sign-in (HTTP 500).
 
 insert into auth.users (
   instance_id,
@@ -14,6 +17,13 @@ insert into auth.users (
   email_confirmed_at,
   raw_app_meta_data,
   raw_user_meta_data,
+  confirmation_token,
+  confirmation_sent_at,
+  recovery_token,
+  recovery_sent_at,
+  email_change_token_current,
+  email_change_token_new,
+  email_change,
   created_at,
   updated_at,
   last_sign_in_at
@@ -29,6 +39,13 @@ values
     now(),
     '{"provider": "email", "providers": ["email"]}'::jsonb,
     '{"full_name": "Alice"}'::jsonb,
+    '',
+    now(),
+    '',
+    now(),
+    '',
+    '',
+    '',
     now(),
     now(),
     now()
@@ -43,6 +60,13 @@ values
     now(),
     '{"provider": "email", "providers": ["email"]}'::jsonb,
     '{"full_name": "Bob"}'::jsonb,
+    '',
+    now(),
+    '',
+    now(),
+    '',
+    '',
+    '',
     now(),
     now(),
     now()
