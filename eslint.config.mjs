@@ -54,6 +54,6 @@ export default [
     },
   },
   {
-    ignores: ["node_modules/**", "dist/**", "*.js"],
+    ignores: ["node_modules/**", "dist/**", ".next/**", "*.js"],
   },
 ]
