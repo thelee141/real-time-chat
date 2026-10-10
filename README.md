@@ -69,6 +69,36 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Testing in a GitHub Codespace (local Supabase)
+
+The repo ships a Supabase local project (`supabase/`) and a dev container, so
+the app can run end-to-end against a local Supabase stack with no hosted
+project or OAuth apps:
+
+1. Open the repo in a Codespace (4-core / 8 GB+ recommended — the Supabase
+   stack is memory-hungry).
+2. The container automatically runs `npm ci`, starts the local Supabase stack
+   (`supabase start`), and writes `.env.local` with the local URL/keys.
+3. Run `npm run dev` and open the forwarded port 3000.
+4. Sign in with the dev-only email form on the login page using a seeded
+   account: `alice@example.com` or `bob@example.com` (password
+   `password123`), or create any new account (email confirmation is disabled
+   locally).
+
+Useful commands (Supabase CLI is installed as a devDependency):
+
+- `npm run db:reset` — re-run migrations + seed (wipes local data)
+- `npm run gen-types:local` — regenerate `lib/supabase/types/database.ts`
+  from the local stack
+- `npm run db:stop` / `npm run db:start` — stop/start the stack
+- Studio (browse the database): forwarded port 54323
+
+To test the GitHub OAuth flow instead, create a GitHub OAuth app with
+callback URL `https://<codespace-name>-54321.app.github.dev/auth/v1/callback`,
+then enable `[auth.external.github]` in `supabase/config.toml` with the
+client id/secret (use `env()` substitution) before running `supabase start`.
+Port 54321 must stay publicly visible for the OAuth callback.
+
 ## Scripts
 
 - `npm run dev`: Starts the development server.
