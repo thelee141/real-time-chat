@@ -1,0 +1,22 @@
+// Dev container for GitHub Codespaces (also works with VS Code Dev Containers).
+// Provides Node, Docker-in-Docker (for the Supabase CLI stack), and the Supabase
+// CLI via the npm devDependency installed by postCreateCommand.
+{
+  "name": "real-time-chat",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [3000, 54321, 54322, 54323],
+  "portsAttributes": {
+    "3000": { "label": "Next.js app" },
+    "54321": {
+      "label": "Supabase API (needs public visibility for OAuth callbacks)",
+      "visibility": "public"
+    },
+    "54322": { "label": "Supabase Postgres" },
+    "54323": { "label": "Supabase Studio" }
+  },
+  "postCreateCommand": "npm ci",
+  "postStartCommand": "bash .devcontainer/post-start.sh"
+}
