@@ -27,6 +27,15 @@ if [ -z "$api_url" ] || [ -z "$anon_key" ] || [ -z "$service_key" ]; then
   exit 0
 fi
 
+# In a Codespace the user's browser is remote: 127.0.0.1 would hit their own
+# machine. Point the app at the publicly forwarded API port instead (port
+# 54321 is declared public in devcontainer.json). Server-side calls from
+# inside the codespace loop back through GitHub's tunnel and still work.
+if [ -n "${CODESPACE_NAME:-}" ]; then
+  api_url="https://${CODESPACE_NAME}-54321.app.github.dev"
+  echo "Codespace detected: using public API URL $api_url"
+fi
+
 cat > .env.local <<EOF
 NEXT_PUBLIC_SUPABASE_URL=$api_url
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_OR_ANON_KEY=$anon_key
