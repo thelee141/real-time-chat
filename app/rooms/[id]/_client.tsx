@@ -269,6 +269,7 @@ function useRealtimeChat({
 
     supabase.realtime.setAuth().then(() => {
       if (cancel) return
+      console.log('[debug] setAuth resolved')
 
       newChannel = supabase.channel(`room:${roomId}:messages`, {
         config: {
@@ -336,7 +337,8 @@ function useRealtimeChat({
             onMessageUpdate?.(record.id, updates)
           },
         )
-        .subscribe((status) => {
+        .subscribe((status, err) => {
+          console.log('[debug] subscribe status:', status, err ?? '')
           if (status !== 'SUBSCRIBED') return
 
           newChannel.track({ userId })
