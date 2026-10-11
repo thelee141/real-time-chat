@@ -93,6 +93,20 @@ Useful commands (Supabase CLI is installed as a devDependency):
 - `npm run db:stop` / `npm run db:start` — stop/start the stack
 - Studio (browse the database): forwarded port 54323
 
+**Accessing the app from a plain browser** (not through VS Code): the
+`3000` (app) and `54321` (Supabase API) ports must be public, and the
+Codespace resets forwarded-port visibility to private whenever the
+listener process restarts. Re-publish them from a machine with `gh`
+authenticated as the Codespace owner:
+
+```bash
+gh codespace ports visibility 3000:public 54321:public -c <codespace-name>
+```
+
+`post-start.sh` already points `NEXT_PUBLIC_SUPABASE_URL` at the
+Codespace's forwarded `54321` URL when `CODESPACE_NAME` is present, so
+browsers outside the Codespace can reach the API.
+
 To test the GitHub OAuth flow instead, create a GitHub OAuth app with
 callback URL `https://<codespace-name>-54321.app.github.dev/auth/v1/callback`,
 then enable `[auth.external.github]` in `supabase/config.toml` with the
