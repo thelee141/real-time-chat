@@ -31,8 +31,14 @@ fi
 # machine. Point the app at the publicly forwarded API port instead (port
 # 54321 is declared public in devcontainer.json). Server-side calls from
 # inside the codespace loop back through GitHub's tunnel and still work.
-if [ -n "${CODESPACE_NAME:-}" ]; then
-  api_url="https://${CODESPACE_NAME}-54321.app.github.dev"
+# CODESPACE_NAME is missing in non-login shells (e.g. `gh codespace ssh`),
+# so fall back to the container init environment.
+codespace_name="${CODESPACE_NAME:-}"
+if [ -z "$codespace_name" ] && [ -r /proc/1/environ ]; then
+  codespace_name=$(tr '\0' '\n' < /proc/1/environ | sed -n 's/^CODESPACE_NAME=//p')
+fi
+if [ -n "$codespace_name" ]; then
+  api_url="https://${codespace_name}-54321.app.github.dev"
   echo "Codespace detected: using public API URL $api_url"
 fi
 
