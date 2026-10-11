@@ -40,6 +40,9 @@ fi
 if [ -z "$codespace_name" ] && [ -r /etc/environment ]; then
   codespace_name=$(sed -n 's/^CODESPACE_NAME=//p' /etc/environment)
 fi
+if [ -z "$codespace_name" ] && [ -r /workspaces/.codespaces/shared/.env ]; then
+  codespace_name=$(sed -n 's/^CODESPACE_NAME=//p' /workspaces/.codespaces/shared/.env)
+fi
 if [ -n "$codespace_name" ]; then
   api_url="https://${codespace_name}-54321.app.github.dev"
   echo "Codespace detected: using public API URL $api_url"
